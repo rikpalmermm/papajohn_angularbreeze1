@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,7 +59,37 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\admin\admin.html" />
+    <Content Include="app\admin\admin.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\common\bootstrap\bootstrap.dialog.js" />
+    <Content Include="app\common\common.js" />
+    <Content Include="app\common\logger.js" />
+    <Content Include="app\common\spinner.js" />
+    <Content Include="app\config.exceptionHandler.js" />
+    <Content Include="app\config.js" />
+    <Content Include="app\config.route.js" />
+    <Content Include="app\dashboard\dashboard.html" />
+    <Content Include="app\dashboard\dashboard.js" />
+    <Content Include="app\layout\shell.html" />
+    <Content Include="app\layout\shell.js" />
+    <Content Include="app\layout\sidebar.html" />
+    <Content Include="app\layout\sidebar.js" />
+    <Content Include="app\layout\topnav.html" />
+    <Content Include="app\layout\widgetheader.html" />
+    <Content Include="app\services\datacontext.js" />
+    <Content Include="app\services\directives.js" />
     <Content Include="App_Data\CodeCamper.sdf" />
+    <Content Include="content\bootstrap-theme.css" />
+    <Content Include="content\bootstrap-theme.min.css" />
+    <Content Include="content\bootstrap.css" />
+    <Content Include="content\bootstrap.min.css" />
+    <Content Include="content\customtheme.css" />
+    <Content Include="content\font-awesome.css" />
+    <Content Include="content\font-awesome.min.css" />
+    <Content Include="content\ie10mobile.css" />
+    <Content Include="content\images\AngularJS-small.png" />
+    <Content Include="content\images\breezelogo.png" />
     <Content Include="content\images\icon.png" />
     <Content Include="content\images\photos\aaron_skonnard.jpg" />
     <Content Include="content\images\photos\brad_green.jpg" />
@@ -99,6 +131,47 @@
     <Content Include="content\images\photos\tim_heuer.jpg" />
     <Content Include="content\images\photos\unknown_person.jpg" />
     <Content Include="content\images\photos\ward_bell.jpg" />
+    <Content Include="content\styles.css" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="content\bootstrap-theme.css.map" />
+    <Content Include="content\bootstrap.css.map" />
+    <Content Include="index.html" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\moment-with-langs.js" />
+    <Content Include="Scripts\moment-with-langs.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\spin.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.10.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +179,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\.gitignore" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Scripts\toastr.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,7 +217,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>51585</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50044/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -148,6 +229,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
