@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B3844A0-E418-4C8B-9628-031C17277780}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CC.Web</RootNamespace>
+    <AssemblyName>CC.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\CodeCamper.sdf" />
+    <Content Include="content\images\icon.png" />
+    <Content Include="content\images\photos\aaron_skonnard.jpg" />
+    <Content Include="content\images\photos\brad_green.jpg" />
+    <Content Include="content\images\photos\colleen_papa.jpg" />
+    <Content Include="content\images\photos\craig_shoemaker.jpg" />
+    <Content Include="content\images\photos\dan_wahlin.jpg" />
+    <Content Include="content\images\photos\dave_ward.jpg" />
+    <Content Include="content\images\photos\elijah_manor.jpg" />
+    <Content Include="content\images\photos\eric_barnard.jpg" />
+    <Content Include="content\images\photos\esteban_garcia.jpg" />
+    <Content Include="content\images\photos\felix_fanboi.jpg" />
+    <Content Include="content\images\photos\fritz_onion.jpg" />
+    <Content Include="content\images\photos\glenn_block.jpg" />
+    <Content Include="content\images\photos\hans_fjallemark.jpg" />
+    <Content Include="content\images\photos\howard_dierking.jpg" />
+    <Content Include="content\images\photos\igor_minar.jpg" />
+    <Content Include="content\images\photos\jason_salmond.jpg" />
+    <Content Include="content\images\photos\jesse_liberty.jpg" />
+    <Content Include="content\images\photos\jim_cowart.jpg" />
+    <Content Include="content\images\photos\john_papa.jpg" />
+    <Content Include="content\images\photos\john_smith.jpg" />
+    <Content Include="content\images\photos\john_sonmez.jpg" />
+    <Content Include="content\images\photos\julie_lerman.jpg" />
+    <Content Include="content\images\photos\keith_sparkjoy.jpg" />
+    <Content Include="content\images\photos\mads_kristensen.jpg" />
+    <Content Include="content\images\photos\megan_russell.jpg" />
+    <Content Include="content\images\photos\mike_callaghan.jpg" />
+    <Content Include="content\images\photos\mike_woodring.jpg" />
+    <Content Include="content\images\photos\pete_brown.jpg" />
+    <Content Include="content\images\photos\rey_bango.jpg" />
+    <Content Include="content\images\photos\rob_eisenberg.jpg" />
+    <Content Include="content\images\photos\ryan_niemeyer.jpg" />
+    <Content Include="content\images\photos\scott_guthrie.jpg" />
+    <Content Include="content\images\photos\scott_hanselman.jpg" />
+    <Content Include="content\images\photos\scott_hunter.jpg" />
+    <Content Include="content\images\photos\shawn_wildermuth.jpg" />
+    <Content Include="content\images\photos\steve_sanderson.jpg" />
+    <Content Include="content\images\photos\sue_menot.jpg" />
+    <Content Include="content\images\photos\tim_heuer.jpg" />
+    <Content Include="content\images\photos\unknown_person.jpg" />
+    <Content Include="content\images\photos\ward_bell.jpg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\.gitignore" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CC.DataAccess\CC.DataAccess.csproj">
+      <Project>{57e72b09-3299-4af9-8a81-5d82c37613d7}</Project>
+      <Name>CC.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Model\CC.Model.csproj">
+      <Project>{d91ea111-bab8-41e3-86cb-e87fdcaecb60}</Project>
+      <Name>CC.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50044/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
