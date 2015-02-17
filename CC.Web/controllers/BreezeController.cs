@@ -5,6 +5,7 @@ using CC.DataAccess;
 using Newtonsoft.Json.Linq;
 using Breeze.ContextProvider;
 using Breeze.WebApi2;
+
 namespace CC.Web.Controllers
 {
     [BreezeController]
@@ -12,6 +13,7 @@ namespace CC.Web.Controllers
     {
         // Todo: inject via an interface rather than "new" the concrete class
         readonly CodeCamperRepository _repository = new CodeCamperRepository();
+
         [HttpGet]
         public string Metadata()
         {
@@ -27,7 +29,8 @@ namespace CC.Web.Controllers
         [HttpGet]
         public IQueryable<Session> Sessions()
         {
-            return _repository.Sessions;
+            var s = _repository.Sessions;
+            return s;
         }
 
         [HttpGet]
@@ -42,12 +45,13 @@ namespace CC.Web.Controllers
             return _repository.Persons;
         }
 
+
         /// <summary>
-        /// Query returing a 1-element array with a lookups object whose
+        /// Query returing a 1-element array with a lookups object whose 
         /// properties are all Rooms, Tracks, and TimeSlots.
         /// </summary>
         /// <returns>
-        /// Returns one object, not an IQueryable,
+        /// Returns one object, not an IQueryable, 
         /// whose properties are "rooms", "tracks", "timeslots".
         /// The items arrive as arrays.
         /// </returns>

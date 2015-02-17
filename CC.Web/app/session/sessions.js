@@ -1,32 +1,33 @@
 ﻿(function () {
     'use strict';
-    var controllerId = 'sessions';
-    angular.module('app').controller(controllerId, ['datacontext', 'common', sessions]);
 
-    function sessions(datacontext, common) {
+    var controllerId = 'sessions';
+
+    angular.module('app').controller(controllerId,
+        ['common', 'datacontext', sessions]);
+
+    function sessions(common, datacontext) {
+        var vm = this;
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
-        var vm = this;
-        vm.title = 'Sessions Title';
-        vm.subtitle = 'Sessions SubTitle';
         vm.sessions = [];
+        vm.refresh = refresh;
+        vm.title = 'Sessions';
 
-        vm.activate = activate;
         activate();
 
         function activate() {
-            common.activateController([getSessions()], controllerId)
-                .then(function () { log('Activated Session View'); });
+            common.activateController(getSessions(), controllerId)
+                .then(function () { log('Activated Sessions View'); });
         }
 
-        function getSessions() {
-            return datacontext.getSessionPartials().then(function (data) {
-                console.log('DATA: ',data);
+        function getSessions(forceRefresh) {
+            return datacontext.getSessionPartials(forceRefresh).then(function (data) {
                 return vm.sessions = data;
             });
         }
 
-
+        function refresh() { getSessions(true); }
     }
 })();

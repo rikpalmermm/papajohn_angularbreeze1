@@ -11,10 +11,23 @@
     function routeConfigurator($routeProvider, routes) {
 
         routes.forEach(function (r) {
-            $routeProvider.when(r.url, r.config);
+            setRoute(r.url, r.config);
         });
         $routeProvider.otherwise({ redirectTo: '/' });
+
+        function setRoute(url, definition) {
+            // sets resolvers for all of the routes
+            // by extending any existing resolvers (or creating a new one)
+            definition.resolve = angular.extend(definition.resolve || {}, {
+                prime: prime
+            });
+            $routeProvider.when(url, definition);
+            return $routeProvider;
+        }
     }
+
+    prime.$inject = ['datacontext'];
+    function prime(dc) { return dc.prime();  }
 
     // Define the routes 
     function getRoutes() {
@@ -30,23 +43,33 @@
                     }
                 }
             }, {
-                url: '/admin',
-                config: {
-                    title: 'admin',
-                    templateUrl: 'app/admin/admin.html',
-                    settings: {
-                        nav: 2,
-                        content: '<i class="fa fa-lock"></i> Admin'
-                    }
-                }
-            }, {
                 url: '/sessions',
                 config: {
                     title: 'sessions',
                     templateUrl: 'app/session/sessions.html',
                     settings: {
+                        nav: 2,
+                        content: '<i class="fa icon-calender"></i> Sessions'
+                    }
+                }
+            }, {
+                url: '/speakers',
+                config: {
+                    title: 'speakers',
+                    templateUrl: 'app/speaker/speakers.html',
+                    settings: {
                         nav: 3,
-                        content: '<i class="fa fa-calendar"></i> Sessions'
+                        content: '<i class="fa icon-user"></i> Speakers'
+                    }
+                }
+            }, {
+                url: '/attendees',
+                config: {
+                    title: 'attendees',
+                    templateUrl: 'app/attendee/attendees.html',
+                    settings: {
+                        nav: 4,
+                        content: '<i class="fa icon-grop"></i> Attendees'
                     }
                 }
             }

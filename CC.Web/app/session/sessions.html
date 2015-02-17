@@ -1,18 +1,30 @@
 ﻿<section class="mainbar" data-ng-controller="sessions as vm">
     <section class="matter">
-        <div class="container">
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="form-search">
+                    <div class="btn-group pull-right">
+                        <a class="btn btn-info" data-ng-click="vm.refresh()"><i class="glyphicon-refresh"></i><span>Refresh</span></a>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="widget worange">
-                    <div data-cc-widget-header title="{{vm.title}}" subtitle="{{vm.subtitle}}"></div>
+                    <div data-cc-widget-header title="{{vm.title}}" subtitle="{{vm.sessions.length}}"></div>
                     <div class="widget-content user">
-                        <div class="padd" data-ng-repeat="s in vm.sessions">
+                        <div class="padd" ng-repeat="s in vm.sessions">
                             <div class="user">
-                                <!--img data-ng-src="{{s.speaker.imageSource}}" class="img-polaroid user-pic" /-->
+                                <img data-cc-img-person="{{s.speaker.imageSource}}" class="img-polaroid user-pic" />
                                 <div class="user-details">
+                                    <small>{{s.timeSlot.name}}</small> at <small>{{s.room.name}}</small>
+                                    <small class="right hidden-xs">{{s.level}}</small>
+                                    <small class="right hidden-xs">{{s.track.name}}</small>
+                                    <small class="right hidden-xs">{{s.code}}</small>
                                     <h3>{{s.title}}</h3>
-                                    <small>at {{s.timeSlotId}}</small> on the <small>{{s.roomId}}</small>
-                                    <small>{{s.level}}</small>
-                                    <small>{{s.code}}</small>
+                                    <h6>{{s.speaker.fullName}}</h6>
+                                    <small class="text-subtle hidden-xs">{{s.tagsFormatted}}</small>
                                 </div>
                             </div>
                         </div>

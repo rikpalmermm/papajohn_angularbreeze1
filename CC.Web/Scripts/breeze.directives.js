@@ -1,7 +1,7 @@
 ﻿/*
  * Breeze Labs: Breeze Directives for Angular Apps
  *
- *  v.1.3.9
+ *  v.1.3.5
  *
  *  Usage:
  *     Make this module a dependency of your app module:
@@ -51,9 +51,9 @@
                 if (attr.type === 'radio' || attr.type === 'checkbox') return;
                 ngModelCtrl.$formatters.push(equivalenceFormatter);
                 
-                function equivalenceFormatter(modelValue){ 
+                function equivalenceFormatter(value){
                    var viewValue = ngModelCtrl.$viewValue // could have used 'elm.val()'
-                   return (+viewValue === +modelValue) ? viewValue : modelValue;
+                   return (value === +viewValue) ? viewValue : value;
                 }
             }
         };
@@ -108,7 +108,7 @@
                 attrs.ngModel,
                 attrs.zValidate);
 
-            if (!info.getValErrs) { return; } // can't do anything w/o this method
+            if (!info.getValErrs) { return; } // can't do anything
 
             // Use only features defined in Angular's jqLite
             var domEl = element[0];
@@ -130,15 +130,14 @@
                 scope.$watch(info.getValErrs, valErrsChanged);
 
                 // update the message in the validation template
-                // when a validation error changes on an input control
-                // newValue is either a string or null (null when no bound entity) 
+                // when a validation error changes on an input control 
                 function valErrsChanged(newValue) {
 
                     // HTML5 custom validity
                     // http://dev.w3.org/html5/spec-preview/constraints.html#the-constraint-validation-api
                     if (domEl.setCustomValidity) {
                         /* only works in HTML 5. Maybe should throw if not available. */
-                        domEl.setCustomValidity(newValue || '');
+                        domEl.setCustomValidity(newValue);
                     }
 
                     var errorHtml = newValue ? valTemplate.replace(/%error%/, newValue) : "";
@@ -192,6 +191,8 @@
             this.scope = scope;
 
             setEntityAndPropertyPaths(this, modelPath, validationPath);
+            // this.entityPath
+            // this.propertyPath 
 
             this.getEntityAspect = this.entityPath ?
                     getEntityAspectFromEntityPath(this) :
