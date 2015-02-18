@@ -49,7 +49,7 @@
                     templateUrl: 'app/session/sessions.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa icon-calender"></i> Sessions'
+                        content: '<i class="fa fa-calendar"></i> Sessions'
                     }
                 }
             }, {
@@ -66,7 +66,7 @@
                     templateUrl: 'app/speaker/speakers.html',
                     settings: {
                         nav: 3,
-                        content: '<i class="fa icon-user"></i> Speakers'
+                        content: '<i class="fa fa-user"></i> Speakers'
                     }
                 }
             }, {
@@ -76,7 +76,7 @@
                     templateUrl: 'app/attendee/attendees.html',
                     settings: {
                         nav: 4,
-                        content: '<i class="fa icon-grop"></i> Attendees'
+                        content: '<i class="fa fa-group"></i> Attendees'
                     }
                 }
             }

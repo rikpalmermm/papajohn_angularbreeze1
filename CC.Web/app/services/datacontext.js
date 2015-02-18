@@ -26,6 +26,9 @@
         var service = {
             getPeople: getPeople,
             getMessageCount: getMessageCount,
+            getAttendeesCount: getAttendeesCount,
+            getSpeakersCount: getSpeakersCount,
+            getSessionsCount: getSessionsCount,
             getSessionPartials: getSessionPartials,
             getSpeakerPartials: getSpeakerPartials,
             getAttendees: getAttendees,
@@ -71,6 +74,33 @@
                 _areAttendeesLoaded(true);
                 log('Retrieved [Attendees] from remote data source', attendees.length, true);
                 return attendees;
+            }
+        }
+
+        function getAttendeesCount() {
+            return EntityQuery.from('Persons').take(0).inlineCount()
+            .using(manager).execute().then(gotAttendees).catch(_queryFailed);
+
+            function gotAttendees(data) {
+                return data.inlineCount;
+            }
+        }
+
+        function getSpeakersCount() {
+            return EntityQuery.from('Speakers').take(0).inlineCount()
+            .using(manager).execute().then(gotSpeakers).catch(_queryFailed);
+
+            function gotSpeakers(data) {
+                return data.inlineCount;
+            }
+        }
+
+        function getSessionsCount() {
+            return EntityQuery.from('Sessions').take(0).inlineCount()
+            .using(manager).execute().then(gotSessions).catch(_queryFailed);
+
+            function gotSessions(data) {
+                return data.inlineCount;
             }
         }
 

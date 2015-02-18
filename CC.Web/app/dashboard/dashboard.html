@@ -13,11 +13,29 @@
                         </li>
 
                         <li class="borange">
-                            <div class="pull-left"><i class="fa fa-envelope"></i></div>
+                            <a href="#/sessions/">
+                                <div class="pull-left"><i class="fa fa-calendar"></i></div>
+                                <div class="datas-text pull-right">
+                                    <span class="bold">{{vm.sessionsCount}}</span> Sessions
+                                </div>
+                                <div class="clearfix"></div>
+                            </a>
+                        </li>
+                        
+                        <li class="bgreen"><a href="#/attendees/">
+                            <div class="pull-left"><i class="fa fa-group"></i></div>
                             <div class="datas-text pull-right">
-                                <span class="bold">{{vm.messageCount}}</span> Messages
+                                <span class="bold">{{vm.attendeesCount}}</span> Attendees
                             </div>
-                            <div class="clearfix"></div>
+                            <div class="clearfix"></div></a>
+                        </li>
+
+                        <li class="bviolet"><a href="#/speakers/">
+                            <div class="pull-left"><i class="fa fa-microphone"></i></div>
+                            <div class="datas-text pull-right">
+                                <span class="bold">{{vm.speakersCount}}</span> Speakers
+                            </div>
+                            <div class="clearfix"></div></a>
                         </li>
 
                     </ul>
