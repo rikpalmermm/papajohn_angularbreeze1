@@ -7,6 +7,13 @@
     toastr.options.timeOut = 4000;
     toastr.options.positionClass = 'toast-bottom-right';
 
+    var keyCodes = {
+        backspace: 8,
+        tab: 9,
+        enter: 13,
+        esc: 27
+    };
+
     // For use with the HotTowel-Angular-Breeze add-on that uses Breeze
     var remoteServiceName = 'breeze/Breeze';
 
@@ -26,6 +33,7 @@
         events: events,
         imageSettings: imageSettings,
         remoteServiceName: remoteServiceName,
+        keyCodes: keyCodes,
         version: '2.1.0'
     };
 
