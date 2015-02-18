@@ -4,9 +4,9 @@
     var controllerId = 'sessions';
 
     angular.module('app').controller(controllerId,
-        ['common', 'config', 'datacontext', sessions]);
+        ['$routeParams', 'common', 'config', 'datacontext', sessions]);
 
-    function sessions(common, config, datacontext) {
+    function sessions($routeParams, common, config, datacontext) {
         var vm = this;
         var keyCodes = config.keyCodes;
         var getLogFn = common.logger.getLogFn;
@@ -16,7 +16,7 @@
         vm.refresh = refresh;
         vm.search = search;
         vm.title = 'Sessions';
-        vm.sessionsSearch = '';
+        vm.sessionsSearch = $routeParams.search || '';
         vm.filteredSessions = [];
         vm.sessionsFilter = sessionsFilter;
 
